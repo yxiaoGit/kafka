@@ -20,7 +20,7 @@ package org.apache.kafka.coordinator.transaction;
 import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.common.config.ConfigDef;
 
-import static org.apache.kafka.common.config.ConfigDef.Importance.HIGH;
+import static org.apache.kafka.common.config.ConfigDef.Importance.LOW;
 import static org.apache.kafka.common.config.ConfigDef.Range.atLeast;
 import static org.apache.kafka.common.config.ConfigDef.Type.INT;
 
@@ -37,8 +37,8 @@ public final class AddPartitionsToTxnConfig {
         "to add the partition to the transaction";
 
     public static final ConfigDef CONFIG_DEF =  new ConfigDef()
-        .define(ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MAX_MS_CONFIG, INT, ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MAX_MS_DEFAULT, atLeast(0), HIGH, ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MAX_MS_DOC)
-        .define(ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MS_CONFIG, INT, ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MS_DEFAULT, atLeast(1), HIGH, ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MS_DOC);
+        .define(ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MAX_MS_CONFIG, INT, ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MAX_MS_DEFAULT, atLeast(0), LOW, ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MAX_MS_DOC)
+        .define(ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MS_CONFIG, INT, ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MS_DEFAULT, atLeast(1), LOW, ADD_PARTITIONS_TO_TXN_RETRY_BACKOFF_MS_DOC);
 
     private final int addPartitionsToTxnRetryBackoffMaxMs;
     private final int addPartitionsToTxnRetryBackoffMs;

@@ -21,6 +21,7 @@ import org.apache.kafka.common.config.ConfigDef;
 
 import static org.apache.kafka.common.config.ConfigDef.Importance.HIGH;
 import static org.apache.kafka.common.config.ConfigDef.Importance.LOW;
+import static org.apache.kafka.common.config.ConfigDef.Importance.MEDIUM;
 import static org.apache.kafka.common.config.ConfigDef.Range.atLeast;
 import static org.apache.kafka.common.config.ConfigDef.Type.BOOLEAN;
 import static org.apache.kafka.common.config.ConfigDef.Type.INT;
@@ -63,10 +64,10 @@ public final class TransactionLogConfig {
     public static final String PRODUCER_ID_EXPIRATION_CHECK_INTERVAL_MS_DOC = "The interval at which to remove producer IDs that have expired due to <code>producer.id.expiration.ms</code> passing.";
     public static final ConfigDef CONFIG_DEF =  new ConfigDef()
             .define(TRANSACTIONS_TOPIC_MIN_ISR_CONFIG, INT, TRANSACTIONS_TOPIC_MIN_ISR_DEFAULT, atLeast(1), HIGH, TRANSACTIONS_TOPIC_MIN_ISR_DOC)
-            .define(TRANSACTIONS_LOAD_BUFFER_SIZE_CONFIG, INT, TRANSACTIONS_LOAD_BUFFER_SIZE_DEFAULT, atLeast(1), HIGH, TRANSACTIONS_LOAD_BUFFER_SIZE_DOC)
+            .define(TRANSACTIONS_LOAD_BUFFER_SIZE_CONFIG, INT, TRANSACTIONS_LOAD_BUFFER_SIZE_DEFAULT, atLeast(1), LOW, TRANSACTIONS_LOAD_BUFFER_SIZE_DOC)
             .define(TRANSACTIONS_TOPIC_REPLICATION_FACTOR_CONFIG, SHORT, TRANSACTIONS_TOPIC_REPLICATION_FACTOR_DEFAULT, atLeast(1), HIGH, TRANSACTIONS_TOPIC_REPLICATION_FACTOR_DOC)
             .define(TRANSACTIONS_TOPIC_PARTITIONS_CONFIG, INT, TRANSACTIONS_TOPIC_PARTITIONS_DEFAULT, atLeast(1), HIGH, TRANSACTIONS_TOPIC_PARTITIONS_DOC)
-            .define(TRANSACTIONS_TOPIC_SEGMENT_BYTES_CONFIG, INT, TRANSACTIONS_TOPIC_SEGMENT_BYTES_DEFAULT, atLeast(1), HIGH, TRANSACTIONS_TOPIC_SEGMENT_BYTES_DOC)
+            .define(TRANSACTIONS_TOPIC_SEGMENT_BYTES_CONFIG, INT, TRANSACTIONS_TOPIC_SEGMENT_BYTES_DEFAULT, atLeast(1), MEDIUM, TRANSACTIONS_TOPIC_SEGMENT_BYTES_DOC)
 
             .define(TRANSACTION_PARTITION_VERIFICATION_ENABLE_CONFIG, BOOLEAN, TRANSACTION_PARTITION_VERIFICATION_ENABLE_DEFAULT, LOW, TRANSACTION_PARTITION_VERIFICATION_ENABLE_DOC)
 
