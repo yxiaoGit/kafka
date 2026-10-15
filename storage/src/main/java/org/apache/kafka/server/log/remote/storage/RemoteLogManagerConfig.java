@@ -302,7 +302,7 @@ public final class RemoteLogManagerConfig {
                         INT,
                         DEFAULT_REMOTE_LOG_MANAGER_THREAD_POOL_SIZE,
                         atLeast(1),
-                        MEDIUM,
+                        LOW,
                         REMOTE_LOG_MANAGER_THREAD_POOL_SIZE_DOC)
                 .define(REMOTE_LOG_MANAGER_COPIER_THREAD_POOL_SIZE_PROP,
                         INT,
